@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Product Barcode Scanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-barcode"></i> Escáner de precios </h1>
+            <p>El regalo prometido</p>
+        </div>
+        
+        <div class="app-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="scanner">Escáner</div>
+                <div class="tab" data-tab="manual">Modo Manual</div>
+            </div>
+            
+            <div id="scanner-tab" class="tab-content active">
+                <div class="scanner-container">
+                    <div id="reader" class="fas fa-camera"></div>
+                    
+                   
+                    <button id="start-scanner" class="btn btn-scan"><i class="fas fa-camera"></i> Escanear</button>
+                    <button id="stop-scanner" class="btn btn-stop hidden"><i class="fas fa-stop-circle"></i> Detener</button>
+                </div>
+                
+                <div id="scanner-result" class="result-container hidden">
+                    
+                    <div id="product-details" class="product-info"></div>
+                    <button id="scan-another" class="btn btn-scan"><i class="fas fa-redo"></i> Escanear otro producto</button>
+                </div>
+            </div>
+            
+            <div id="manual-tab" class="tab-content">
+                <div class="manual-lookup">
+                    <h2><i class="fas fa-keyboard"></i> Modo Manual</h2>
+                    <p>Escribe el codigo de barras para acceder a la informacion del producto</p>
+                    
+                    <div class="input-group">
+                        <label for="barcode-input">Codigo de barras</label>
+                        <input type="text" id="barcode-input" placeholder="Codigo de barras...">
+                    </div>
+                    
+                    <button id="lookup-btn" class="btn btn-manual"><i class="fas fa-search"></i> Buscar producto</button>
+                    
+                    <div id="manual-result" class="result-container hidden">
+                        <div id="manual-product-details" class="product-info"></div>
+                        <button id="clear-manual" class="btn"><i class="fas fa-times"></i> Limpiar buscador</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="status-message" class="status"></div>
+            
+            <div id="loading" class="loading hidden">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Cargando base de datos...</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Escáner de precios | CSV File: productos_regalo_prometido.csv</p>
+        </div>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
