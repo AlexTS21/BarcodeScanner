@@ -245,10 +245,6 @@ function displayProductInfo(product, container) {
             <div class="info-value">${product.descripcion || 'N/A'}</div>
         </div>
         <div class="info-row">
-            <div class="info-label">Stock:</div>
-            <div class="info-value ">${product.stock}</div>
-        </div>
-        <div class="info-row">
             <div class="info-label">Precio:</div>
             <div class="info-value precio">${price}</div>
         </div>
